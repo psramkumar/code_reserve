@@ -17,7 +17,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RequestMapping("/api/v1/devices")
-@Tag(name = "Preference Providers")
+@Tag(name = "Device Reservation")
 public interface DeviceServiceAPI {
 
     @GetMapping
@@ -44,8 +44,8 @@ public interface DeviceServiceAPI {
     })
     ResponseEntity<Mono<DeviceDTO>> releaseDevicesApi(@PathVariable String code, @Parameter(hidden = true) @RequestHeader("X-AUTH-USERID") String userId);
 
-    @GetMapping("/fonesync")
-    @Operation(description = "Get List of Device Meta from FONE API")
+    @GetMapping("/fonosync")
+    @Operation(description = "Get List of Device Meta from FONO API")
     @ApiResponse(responseCode = "200", description = "OK", content = {@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = DeviceMetaResponse.class)))})
     ResponseEntity<Flux<DeviceMetaResponse>> listDevicesFoneApi(@RequestParam String name, @Parameter(hidden = true) @RequestHeader("X-AUTH-USERID") String userId);
 }
