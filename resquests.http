@@ -1,0 +1,21 @@
+GET http://localhost:8080/api/v1/devices?size=2&page=0
+Accept: application/json
+X-AUTH-USERID: 1234
+
+###
+PATCH http://localhost:8080/api/v1/devices/58d8fac8-b815-48c0-a03b-81ec48be160f/reserve
+Content-Type: application/json
+X-AUTH-USERID: 1234
+
+###
+
+PATCH http://localhost:8080/api/v1/devices/58d8fac8-b815-48c0-a03b-81ec48be160f/release
+Content-Type: application/json
+X-AUTH-USERID: 1234
+
+###
+
+GET http://localhost:8080/api/v1/devices/fonesync?name=trst
+accept: application/json
+X-AUTH-USERID: 2345
+###
